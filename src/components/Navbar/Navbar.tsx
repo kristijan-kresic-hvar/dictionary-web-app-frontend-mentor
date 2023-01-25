@@ -23,7 +23,22 @@ const Navbar = (): JSX.Element => {
         </svg>
       </section>
       <section className="flex justify-between items-center gap-3">
-        <DropDown />
+        <DropDown
+          options={[
+            {
+              label: 'Sans Serif',
+              value: 'sansserif'
+            },
+            {
+              label: 'Serif',
+              value: 'serif'
+            },
+            {
+              label: 'Mono',
+              value: 'mono'
+            }
+          ]}
+        />
         <div className="w-[2px] h-[32px] bg-[#979797] opacity-50"></div>
         <ThemeToggle />
       </section>
