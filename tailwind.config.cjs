@@ -24,6 +24,10 @@ module.exports = {
         mono: ['Inconsolata', 'monospace'],
         sans: ['Inter', 'sans-serif'],
         serif: ['Lora', 'serif']
+      },
+      boxShadow: {
+        dropdown: '0px 5px 30px rgba(0, 0, 0, 0.1)',
+        dropdowndark: '0px 5px 30px #A445ED'
       }
     },
     plugins: []
