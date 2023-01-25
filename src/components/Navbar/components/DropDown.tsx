@@ -1,4 +1,5 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
+import useClickOutside from '../../../hooks/useClickOutside'
 
 interface DropDownOption {
   label: string
@@ -12,6 +13,10 @@ interface DropDownProps {
 const DropDown = ({ options, onOptionChange }: DropDownProps): JSX.Element => {
   const dropDownRef = useRef<HTMLDivElement>(null)
 
+  useClickOutside(dropDownRef, () => {
+    setIsOpen(false)
+  })
+
   const [selected, setSelected] = useState<DropDownOption>(options[0])
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
@@ -20,25 +25,6 @@ const DropDown = ({ options, onOptionChange }: DropDownProps): JSX.Element => {
     setIsOpen(false)
     onOptionChange?.(option.value)
   }
-
-  useEffect(() => {
-    const handleOutsideClick = (
-      e: MouseEvent | TouchEvent | PointerEvent
-    ): void => {
-      if (
-        (dropDownRef.current != null) &&
-        !dropDownRef.current.contains(e.target as Node)
-      ) {
-        setIsOpen(false)
-      }
-    }
-
-    document.addEventListener('click', handleOutsideClick)
-
-    return () => {
-      document.removeEventListener('click', handleOutsideClick)
-    }
-  }, [])
 
   return (
     <div className="relative" ref={dropDownRef}>
