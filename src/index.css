@@ -39,6 +39,12 @@ html {
   margin: 0 auto;
 }
 
+@media only screen and (min-width: 480px) {
+  html {
+    font-size: 16px;
+  }
+}
+
 @media only screen and (min-width: 720px) {
   html {
     font-size: 18px;
