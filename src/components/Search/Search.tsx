@@ -20,7 +20,7 @@ const Search: React.FC<Props> = ({ onSearch, placeholder }) => {
         Search
       </label>
       <input
-        className={`${styles.search} w-full h-[4rem] bg-[#F4F4F4] dark:bg-[#1F1F1F] pl-[1.5rem] dark:text-white pr-[3rem] max-h-[64px] rounded-[1rem] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent`}
+        className={`${styles.search} w-full h-[4rem] bg-[#F4F4F4] dark:bg-[#1F1F1F] pl-[1.5rem] dark:text-white pr-[3rem] max-h-[64px] rounded-[1rem] focus:outline-none focus:ring-2 caret-purple font-bold focus:ring-purple focus:border-transparent`}
         id="search"
         type="text"
         placeholder={placeholder?.length != null ? placeholder : 'Search'}
