@@ -8,16 +8,18 @@ function App(): JSX.Element {
   }
 
   return (
-    <div className="dark:bg-[#050505] bg-white transition-bg ease-in-out duration-200 delay-100">
+    <div className="dark:bg-[#050505] bg-white w-full h-full transition-bg ease-in-out duration-200 delay-100">
       <main className="container">
-        <Navbar />
+        <div className="pt-[1.5rem] sm:pt-[3.6rem]">
+          <Navbar />
+        </div>
         <div className="mt-[3.13rem]">
           <Search
             onSearch={onSearch}
             placeholder="Enter a word and press enter..."
           />
         </div>
-        <div className="mt-[2.8rem]">
+        <div className="mt-[2.8rem] pb-[1.5rem] sm:pb-[3.6rem]">
           <Dictionary />
         </div>
       </main>

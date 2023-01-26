@@ -33,12 +33,16 @@ html {
   font-size: 16px;
 }
 
+html.dark {
+  background: #050505;
+}
+
 body {
   font-family: 'Inter', sans-serif;
 }
 
 .container {
-  width: 95%;
+  width: 90%;
   max-width: 737px;
   margin: 0 auto;
 }

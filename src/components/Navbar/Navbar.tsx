@@ -4,7 +4,7 @@ import { handleFontChange } from './utils'
 
 const Navbar = (): JSX.Element => {
   return (
-    <nav className="w-full flex justify-between pt-[58px] pb-[51] items-center">
+    <nav className="w-full flex justify-between pb-[51] items-center">
       <section>
         <svg
           xmlns="http://www.w3.org/2000/svg"
