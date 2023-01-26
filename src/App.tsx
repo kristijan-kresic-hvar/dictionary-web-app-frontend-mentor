@@ -3,7 +3,9 @@ import Search from '@/components/Search'
 import Dictionary from '@/components/Dictionary'
 
 function App(): JSX.Element {
-  const onSearch = (value: string): void => {}
+  const onSearch = (value: string): void => {
+    console.log(value)
+  }
 
   return (
     <div className="dark:bg-[#050505] bg-white transition-bg ease-in-out duration-200 delay-100">
