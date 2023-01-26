@@ -1,5 +1,6 @@
-import Navbar from './components/Navbar'
-import Search from './components/Search'
+import Navbar from '@/components/Navbar'
+import Search from '@/components/Search'
+import Dictionary from '@/components/Dictionary'
 
 function App(): JSX.Element {
   const onSearch = (value: string): void => {}
@@ -13,6 +14,9 @@ function App(): JSX.Element {
             onSearch={onSearch}
             placeholder="Enter a word and press enter..."
           />
+        </div>
+        <div className="mt-[2.8rem]">
+          <Dictionary />
         </div>
       </main>
     </div>

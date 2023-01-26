@@ -33,6 +33,10 @@ html {
   font-size: 16px;
 }
 
+body {
+  font-family: 'Inter', sans-serif;
+}
+
 .container {
   width: 95%;
   max-width: 737px;
