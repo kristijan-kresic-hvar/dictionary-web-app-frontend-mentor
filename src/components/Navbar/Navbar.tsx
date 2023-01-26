@@ -1,5 +1,6 @@
 import DropDown from './components/DropDown'
 import ThemeToggle from './components/ThemeToggle'
+import { handleFontChange } from './utils'
 
 const Navbar = (): JSX.Element => {
   return (
@@ -38,6 +39,9 @@ const Navbar = (): JSX.Element => {
               value: 'mono'
             }
           ]}
+          onOptionChange={(value) => {
+            handleFontChange(value)
+          }}
         />
         <div className="w-[2px] h-[32px] bg-[#979797] opacity-50"></div>
         <ThemeToggle />
