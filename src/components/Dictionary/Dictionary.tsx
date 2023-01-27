@@ -79,7 +79,7 @@ const Dictionary = (): JSX.Element => {
         </ul>
       </div>
       <div className="w-full h-[1px] bg-[#E9E9E9] dark:bg-[#3A3A3A] mb-[1.3rem]"></div>
-      <div className="flex items-center justify-start">
+      <div className="flex items-center justify-start w-full">
         <h4 className="leading-[1.06rem] text-[0.9rem] text-[#757575] mr-[1.25rem] border-b border-b-[#757575]">
           Source
         </h4>
@@ -87,7 +87,7 @@ const Dictionary = (): JSX.Element => {
           target="_blank"
           rel="noreferrer noopener"
           href="https://www.lexico.com/en/definition/keyboard"
-          className="dark:text-white border-b border-b-[#757575] leading-[1.06rem] text-[0.9rem]">
+          className="dark:text-white border-b border-b-[#757575] leading-[1.06rem] text-[0.9rem] truncate">
           https://www.lexico.com/en/definition/keyboard
         </a>
         <span>
