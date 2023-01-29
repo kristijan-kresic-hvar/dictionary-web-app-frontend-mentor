@@ -5,6 +5,10 @@ interface MeaningProps {
   list: string[]
 }
 
+const defaultValues: { startingIndex: 0 } = {
+  startingIndex: 0
+}
+
 const Meaning = ({ title, list }: MeaningProps): JSX.Element => {
   const [limit] = useState<number>(5)
   const [currentIndex, setCurrentIndex] = useState<number>(0)
@@ -20,16 +24,13 @@ const Meaning = ({ title, list }: MeaningProps): JSX.Element => {
   }
 
   useEffect(() => {
+    setCurrentIndex(0)
     if (list?.length <= limit) {
       setUpdatedList(list)
       return
     }
-    setUpdatedList(list?.slice(currentIndex, limit))
+    setUpdatedList(list?.slice(defaultValues.startingIndex, limit))
   }, [list])
-
-  console.log(currentIndex, 'INDEX')
-  console.log(limit, 'limit')
-  console.log(list?.length, 'list?.length')
 
   return (
     <div className="mb-[2.5rem]">
