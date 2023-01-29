@@ -35,6 +35,7 @@ const WordAudio = ({ audio }: WordAudioProps): JSX.Element => {
     <button
       onClick={handlePlay}
       type="button"
+      disabled={isPlaying}
       className={`${isPlaying ? 'opacity-50 pointer-events-none' : ''}`}>
       <span className="sr-only">Play out loud</span>
       <svg

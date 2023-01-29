@@ -47,9 +47,9 @@ const Dictionary = ({ query }: DictionaryProps): JSX.Element => {
         </div>
         {audioSrc?.length > 0 && <WordAudio audio={audioSrc} />}
       </div>
-      {response.data[0].meanings.map((meaning: any) => (
+      {response.data[0].meanings.map((meaning: any, index: number) => (
         <Meaning
-          key={meaning.partOfSpeech}
+          key={index}
           title={meaning.partOfSpeech}
           list={meaning.definitions}
         />
