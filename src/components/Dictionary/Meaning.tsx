@@ -18,8 +18,8 @@ const Meaning = ({ title, list }: MeaningProps): JSX.Element => {
         Meaning
       </h3>
       <ul className="list-disc marker:text-purple ml-[1.4rem] mb-[2.5rem]">
-        {list.map((item: any) => (
-          <Fragment key={item}>
+        {list.map((item: any, index: number) => (
+          <Fragment key={index}>
             <li className="pl-[1rem] mb-[0.8rem] last:mb-[0rem] sm:pl-[1.6rem] pb-[0.8rem] font-[400] leading-[1.5rem] text-[0.94rem] sm:text-[1.13rem] dark:text-white">
               {item.definition}
               {item.example?.length > 0 && (
