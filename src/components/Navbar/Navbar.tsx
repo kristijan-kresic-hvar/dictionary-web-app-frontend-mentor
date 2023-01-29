@@ -7,9 +7,8 @@ const Navbar = (): JSX.Element => {
     <nav className="w-full flex justify-between pb-[51] items-center">
       <section>
         <svg
+          className="w-[2rem]"
           xmlns="http://www.w3.org/2000/svg"
-          width="2rem"
-          height="auto"
           viewBox="0 0 34 38">
           <g
             fill="none"
