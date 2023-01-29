@@ -1,6 +1,7 @@
 import { API_URL } from '../constants'
 
 export const getWordDefinition = async (word: string): Promise<string> => {
+  console.log(word)
   const response = await fetch(`${API_URL}${word}`)
 
   if (!response.ok) {
