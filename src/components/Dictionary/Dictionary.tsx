@@ -28,8 +28,6 @@ const Dictionary = ({ query }: DictionaryProps): JSX.Element => {
     return <></>
   }
 
-  console.log(response?.data)
-
   const audioSrc = response.data[0].phonetics.find(
     (phonetic: any) => phonetic.audio.length > 0
   )?.audio

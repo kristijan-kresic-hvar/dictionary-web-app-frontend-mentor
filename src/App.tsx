@@ -52,6 +52,7 @@ function App(): JSX.Element {
             setQueryError(false)
             if (searchRef.current != null) {
               searchRef.current.value = ''
+              searchRef.current.focus()
             }
           }}>
           <Suspense fallback={loaderComponent}>
