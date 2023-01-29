@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 
 interface MeaningProps {
   title: string
@@ -6,6 +6,31 @@ interface MeaningProps {
 }
 
 const Meaning = ({ title, list }: MeaningProps): JSX.Element => {
+  const [limit] = useState<number>(5)
+  const [currentIndex, setCurrentIndex] = useState<number>(0)
+  const [updatedList, setUpdatedList] = useState<string[]>([])
+
+  const handleShowMore = (): void => {
+    const newIndex = currentIndex + limit
+    const newLimit = newIndex + limit
+    setUpdatedList((prevState) => {
+      return [...prevState, ...list?.slice(newIndex, newLimit)]
+    })
+    setCurrentIndex(newIndex)
+  }
+
+  useEffect(() => {
+    if (list?.length <= limit) {
+      setUpdatedList(list)
+      return
+    }
+    setUpdatedList(list?.slice(currentIndex, limit))
+  }, [list])
+
+  console.log(currentIndex, 'INDEX')
+  console.log(limit, 'limit')
+  console.log(list?.length, 'list?.length')
+
   return (
     <div className="mb-[2.5rem]">
       <div className="flex items-center justify-between mb-[2.5rem]">
@@ -18,7 +43,7 @@ const Meaning = ({ title, list }: MeaningProps): JSX.Element => {
         Meaning
       </h3>
       <ul className="list-disc marker:text-purple ml-[1.4rem] mb-[2.5rem]">
-        {list.map((item: any, index: number) => (
+        {updatedList?.map((item: any, index: number) => (
           <Fragment key={index}>
             <li className="pl-[1rem] mb-[0.8rem] last:mb-[0rem] sm:pl-[1.6rem] pb-[0.8rem] font-[400] leading-[1.5rem] text-[0.94rem] sm:text-[1.13rem] dark:text-white">
               {item.definition}
@@ -31,6 +56,14 @@ const Meaning = ({ title, list }: MeaningProps): JSX.Element => {
           </Fragment>
         ))}
       </ul>
+      {list?.length > currentIndex + limit && (
+        <button
+          type="button"
+          className="mt-[0.5rem] block text-[#757575] font-[400] text-[0.94rem] sm:text-[1.13rem]"
+          onClick={handleShowMore}>
+          Show more
+        </button>
+      )}
     </div>
   )
 }
